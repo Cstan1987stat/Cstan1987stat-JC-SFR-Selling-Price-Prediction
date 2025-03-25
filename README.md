@@ -8,6 +8,6 @@ Expecting the Gradient Boosting Regressor (gradient boost.ipynb) to yield better
 
 Currently, the target variable is logarithmically transformed. The predictor variables pass through a pipeline that applies a logarithmic transformation followed by standard scaling.
 
-## Update on Novemrber 4, 2024.
+## Update on November 4, 2024.
 
 The final notebook (a new hope.ipynb) has been uploaded. In this notebook, through different transformations different parameter options while using the Randomized Search CV function, utilizing the features with importance, multiple attempts were made to find a way to reduce the MAE to a good amount. While I have no doubt there is more that could be done, the fact of the matter is that this project has dragged on with results that I haven't been proud of. Therefore, this will serve as the final update to my project.
