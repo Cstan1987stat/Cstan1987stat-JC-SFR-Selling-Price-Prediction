@@ -1,13 +1,16 @@
-# Cstan1987stat-JC-SFR-Selling-Price-Prediction
+# Johnson County Property Price Prediction
 
-## Update on October 31, 2024.
+## Project Overivew
 
-I’ve uploaded all three notebooks where I explored building Support Vector Regressors, Random Forest Regressors, and Gradient Boosting Regressors. The Support Vector Regressor notebook (svr.ipynb) is the one I’m most proud of, as I invested substantial time in commenting each line of code and creating clear markdown sections to explain the process. By the time I reached the Random Forest Regressor notebook (random forest.ipynb), the commenting and markdown process felt monotonous, so I focused primarily on tuning the model for optimal performance. Using Scikit-learn’s Randomized Search, I aimed to narrow down the best parameter combinations to minimize the MAE on the test data. Unfortunately, the MAE remained around 70,000, with evident overfitting.
+This project involves analyzing data from **[Redfin](https://www.redfin.com/?msockid=0ef39837a8b466032ea88d6aa93a6711)** for Johnson County houses, using Power Query to merge the data for different zip codes, and utilzing different machine learning models to predict the selling prices. 
 
-Expecting the Gradient Boosting Regressor (gradient boost.ipynb) to yield better results, I moved on to that model. However, overfitting issues persisted, and my attempts to mitigate them were unsuccessful. I was able to reduce the MAE to 65,000 by lowering dimensionality, but it became clear that the project might not yield the results I had hoped for. I plan to create a final notebook to test different transformations, interaction terms, and squared terms to aim for a lower MAE.
+**Completed Work**
+* **[Initial Notebook](https://github.com/Cstan1987stat/Cstan1987stat-JC-SFR-Selling-Price-Prediction/blob/main/notebooks/inital%20notebook.ipynb)** -> Code used for property format column headers, removing unnesesary features, handling missing values, analyzing target variable (Selling Price) distribution, analyzing numerical predictor features, analyzing categorical predictor variables, one-hot encoding categorical features, and splitting up our data into a training and testing set.
+* **[Finding Three Methods](https://github.com/Cstan1987stat/Cstan1987stat-JC-SFR-Selling-Price-Prediction/blob/main/notebooks/finding_three_methods.ipynb)** -> Code used to fit Linear Regression, Support Vector Machine, Decision Tree, Random Forest, AdaBoost, and Gradient Boosting machine learning models using Scikit-Learn. First run through was with no transformations besides the previous one-hot encoding, second run through was with the predictor variable being logarithmically transformed and standard scaled, and third run through was same as the second run through but with the target variable being logartihmically transformed aswell. After analyzing the r-squared and mean absolute error for every model on the training data, it was determined that Support Vector Machine, Random Forest, and Gradient Boost would be the three models to be further explored.
+* **[SVR](https://github.com/Cstan1987stat/Cstan1987stat-JC-SFR-Selling-Price-Prediction/blob/main/notebooks/svr.ipynb)** Code used to build and explore Support Vector Machine Regressors. Explored the impact the regularization paramter C, differning kernel parameters, and epsilon parameters had on the mean absolute error.
+   * Lower values of C decreased error up to a certain point, then increased the error.
+   * RBF kernel has the lowest error.
+   * Epsilon lead to higher errors as it was increased.
+A crude function was defined to find the best combination of C, kernel, and epsilon (which resulted in a best testing error of 71541 (prediction were off by using C=2.1, epsilon = 0.06, and kernel = rbf). 
 
-Currently, the target variable is logarithmically transformed. The predictor variables pass through a pipeline that applies a logarithmic transformation followed by standard scaling.
-
-## Update on November 4, 2024.
-
-The final notebook (a new hope.ipynb) has been uploaded. In this notebook, through different transformations different parameter options while using the Randomized Search CV function, utilizing the features with importance, multiple attempts were made to find a way to reduce the MAE to a good amount. While I have no doubt there is more that could be done, the fact of the matter is that this project has dragged on with results that I haven't been proud of. Therefore, this will serve as the final update to my project.
+* ****
