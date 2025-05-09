@@ -11,6 +11,7 @@ This project involves analyzing data from **[Redfin](https://www.redfin.com/?mso
    * Lower values of C decreased error up to a certain point, then increased the error.
    * RBF kernel has the lowest error.
    * Epsilon lead to higher errors as it was increased.
+
 A crude function was defined to find the best combination of C, kernel, and epsilon (which resulted in a best testing error of 71541 (prediction were off by using C=2.1, epsilon = 0.06, and kernel = rbf). 
 
 * ****
